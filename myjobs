@@ -1,0 +1,53 @@
+#!/bin/bash
+# Jobs monitor for NIMS supercomputer
+# @ndthien
+
+user='INSERT_YOUR_USERNAME'
+
+color_off='\033[0m' # Text Reset
+color_blue='\033[0;34m'   # Blue
+
+total_jobs=`qstat -u $user | awk 'FNR>5' | cat -n | wc -l`
+
+printf $color_blue
+printf "\t+------------+-----------------+---------+---------+\n"
+printf "\t| queue name | submitting jobs | running | waiting |\n"
+printf "\t+------------+-----------------+---------+---------+\n"
+
+for q_job in 'qM' 'qS' 'qA' 'qD' 'qL'
+do
+    total_q=`qstat -u $user | awk '{print $3}' | grep $q_job | wc -l \
+	 | awk '{printf "%3i", $1}'`
+    q_running=`qstat -u $user | grep $q_job | awk '{print $11}' \
+ 	| grep : | wc -l | awk '{printf "%3i", $1}'`
+    q_waiting=`qstat -u $user | grep $q_job | awk '{print $11}' \
+ 	| grep "\-\-" | wc -l | awk '{printf "%3i", $1}'`
+    printf "\t|    $q_job      |     $total_q         |  $q_running   \
+	 |  $q_waiting    |\n" | sed "s/ 0 / - /g"
+done
+printf "\t+------------+-----------------+---------+---------+\n"
+
+printf "\t"
+qstat -u $user | sed -n '3p'
+printf "\t"
+qstat -u $user | sed -n '4p'
+printf "\t"
+qstat -u $user | sed -n '5p'
+printf $color_off
+
+for ((i=1; i <= $total_jobs; i++))
+do
+  qstat -u $user | awk 'FNR>5' | cat -n | sed -n ${i}p
+  printf '        '
+  printf "DIR"
+  qstat -f | awk '/WORKDIR/,/LANG/' | xargs | sed "s/PBS_O_WORKDIR/\n/g" \
+	 | grep "/home/$user" | sed -n ${i}p | sed -r 's/\s+//g' \
+	 | sed "s/,PBS_O_LANG=en_US.UTF-8,//g" \
+	 | sed "s/,PBS_O_LANG=ja_JP.UTF-8,//g"
+
+  printf $color_blue"        +"
+  for j in {1..78}; do printf "-"; done
+  printf "+\n"$color_off
+done
+
+printf "\n"

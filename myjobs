@@ -22,7 +22,7 @@ do
  	| grep : | wc -l | awk '{printf "%3i", $1}'`
     q_waiting=`qstat -u $user | grep $q_job | awk '{print $11}' \
  	| grep "\-\-" | wc -l | awk '{printf "%3i", $1}'`
-    printf "\t|    $q_job      |     $total_q         |  $q_running   \
+    printf "\t|    $q_job      |     $total_q         |  $q_running \
 	 |  $q_waiting    |\n" | sed "s/ 0 / - /g"
 done
 printf "\t+------------+-----------------+---------+---------+\n"

@@ -9,10 +9,10 @@ Jobs monitor for NIMS supercomputer
                                                             Req'd  Req'd   Elap
 Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
 --------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
-4172355.tsurugi duc      qM       Nb@oG14     32635  36 864 4464gb 48:00 R 06:41
+4172355.tsurugi xyz      qM       Nb@oG14     32635  36 864 4464gb 48:00 R 06:41
 ```
 
-**News style**
+**New style**
 
 > myjobs
 

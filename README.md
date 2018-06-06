@@ -29,8 +29,8 @@ Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
 	    Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
 	    --------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
      1  4172680.tsurugi username qM       test        25511   1  24  124gb 48:00 R 00:02
-        DIR=/home/username/work/STO/charged/mo_c
+        cd /home/username/work/STO/charged/mo_c
         +------------------------------------------------------------------------------+
      2  4172681.tsurugi username qM       test        21490   1  24  124gb 48:00 R 00:01
-        DIR=/home/username/work/STO/charged5/w_c
+        cd /home/username/work/STO/charged5/w_c
         +------------------------------------------------------------------------------+

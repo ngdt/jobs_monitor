@@ -2,12 +2,7 @@
 # Jobs monitor for NIMS supercomputer
 # @Thien D. Ngo
 
-if [ -z "$1"  ]
-then
-  user='INSERT_YOUR_USERNAME_HERE'
-else
-  user="$1"
-fi
+user='INSERT_YOUR_USERNAME_HERE'
 
 color_off='\033[0m' # Text Reset
 color_blue='\033[0;34m'   # Blue

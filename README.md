@@ -14,7 +14,7 @@ Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
 
 **New style**
 
-> myjobs
+> my_jobs
 
 	+------------+-----------------+---------+---------+
 	| queue name | submitting jobs | running | waiting |

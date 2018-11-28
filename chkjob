@@ -1,6 +1,5 @@
 #!/bin/bash
 # Jobs monitor for NIMS supercomputer
-# @Thien D. Ngo
 
 user='INSERT_YOUR_USERNAME_HERE'
 
@@ -49,10 +48,6 @@ do
 	 | sed "s/,PBS_O_LANG=ja_JP.UTF-8,//g" \
 	 | sed "s/,//g"`
   echo
-  printf $color_cyan
-  echo "[Last 3 lines]:" 
-  tail -n3 $addr/test.log
-  printf $color_off
   printf $color_blue"        +"
   for j in {1..78}; do printf "-"; done
   printf "+\n"$color_off

@@ -1,20 +1,22 @@
-# chkjobs
-Jobs monitor for NIMS supercomputer
+**chkjob** is a command line application written in Shell based on **qstat** for monitoring jobs on NIMS supercomputer (Tsukuba, Japan).
 
-**Default command**
+## Problem
 
-> qstat -u username
+**qstat** does not show the full path of the jobs.
 
 ```
+$ qstat -u username
+
                                                             Req'd  Req'd   Elap
 Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
 --------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
 4172355.tsurugi xyz      qM       Nb@oG14     32635  36 864 4464gb 48:00 R 06:41
 ```
 
-**New style**
-
-> my_jobs
+## Resolve and Usage
+```
+$ chkjob
+```
 
 	+------------+-----------------+---------+---------+
 	| queue name | submitting jobs | running | waiting |
@@ -34,3 +36,17 @@ Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
      2  4172681.tsurugi username qM       test        21490   1  24  124gb 48:00 R 00:01
         cd /home/username/work/STO/charged5/w_c
         +------------------------------------------------------------------------------+
+
+## Installation
+
+```
+$ git clone https://github.com/thienducngo/chkjob.git
+
+Upload to /bin directory on NIMS supercomputer server
+
+$ cd bin
+$ chmod u+x chkjob
+```
+
+## Lisense
+MIT

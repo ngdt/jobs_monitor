@@ -41,10 +41,13 @@ $ chkjob
 
 ```
 $ git clone https://github.com/thienducngo/chkjob.git
+```
 
-Modify field 'user' in the file chkjob
-Upload to /bin directory on NIMS supercomputer server
+* Modify field '**user**' in the file chkjob
 
+* Upload to **/bin** directory on NIMS supercomputer server
+
+```
 $ cd bin
 $ chmod u+x chkjob
 ```

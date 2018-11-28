@@ -1,4 +1,4 @@
-# jobs_monitor
+# chkjobs
 Jobs monitor for NIMS supercomputer
 
 **Default command**

@@ -40,7 +40,7 @@ $ chkjob
 ## Installation
 
 ```
-$ git clone https://github.com/thienducngo/chkjob.git
+$ git clone https://github.com/ngoducthien/chkjob.git
 ```
 
 * Modify field '**user**' in the file chkjob

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Jobs monitor for NIMS supercomputer
+# Jobs monitor for SGE job scheduler.
 
 user='INSERT_YOUR_USERNAME_HERE'
 

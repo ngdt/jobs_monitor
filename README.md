@@ -1,4 +1,4 @@
-**chkjob** is a command line application written in Shell based on **qstat** for monitoring jobs on NIMS supercomputer (Tsukuba, Japan).
+**chkjob** is a command line application written in Shell based on **qstat** for monitoring jobs for SGE QSUB.
 
 ## Problem
 

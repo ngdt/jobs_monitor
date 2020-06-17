@@ -51,6 +51,3 @@ $ git clone https://github.com/ngoducthien/chkjob.git
 $ cd bin
 $ chmod u+x chkjob
 ```
-
-## Lisense
-MIT
